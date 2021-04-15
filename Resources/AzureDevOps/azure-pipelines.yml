@@ -43,8 +43,6 @@ stages:
         BuildPlatform: $(BuildPlatform)
         BuildConfiguration: $(BuildConfiguration)
         DotNetCoreVersion: '3.1.100'
-        PublishWebApp: true
-        TestSuffix: UnitTests
 
     # - template: /AzureDevOpsTemplates/Build/StepTemplates/dfc-arm-build.yml@dfc-devops
     #   parameters:
