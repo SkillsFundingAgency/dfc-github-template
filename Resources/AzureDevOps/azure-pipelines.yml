@@ -37,11 +37,6 @@ stages:
   - job:
     displayName: Build and test application & templates"
     steps:
-    - template: /AzureDevOpsTemplates/Build/StepTemplates/dfc-arm-build.yml@dfc-devops
-      parameters:
-        ArmTemplateRoot: '${{ variables.ArmTemplateRoot }}'
-        SolutionBaseName: '${{ variables.SolutionBaseName }}'
-
     - template: AzureDevOpsTemplates\Build\StepTemplates\dfc-dotnetcore-build-sonar.yml@dfc-devops
       parameters:
         SolutionBaseName: $(SolutionBaseName)
@@ -50,3 +45,8 @@ stages:
         DotNetCoreVersion: '3.1.100'
         PublishWebApp: true
         TestSuffix: UnitTests
+
+    # - template: /AzureDevOpsTemplates/Build/StepTemplates/dfc-arm-build.yml@dfc-devops
+    #   parameters:
+    #     ArmTemplateRoot: '${{ variables.ArmTemplateRoot }}'
+    #     SolutionBaseName: '${{ variables.SolutionBaseName }}'
